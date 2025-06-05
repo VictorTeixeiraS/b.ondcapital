@@ -24,9 +24,6 @@ Para instruções detalhadas sobre como utilizar a plataforma, consulte nossa do
 - Especificações do sistema
 - Credenciais de acesso
 
-## Suporte
-
-Para dúvidas e suporte, entre em contato com nossa equipe através do e-mail suporte@b.ond.com.br
 
 ## Licença
 
