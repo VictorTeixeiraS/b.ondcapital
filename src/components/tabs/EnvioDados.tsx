@@ -418,7 +418,7 @@ const EnvioDados = ({ onFetchComplete }) => {
           onClick={handleAplicarCriterios}
           className="  hover:bg-eucalyptus-dark text-eucalyptus-dark hover:text-white py-20 px-[250px]"
         >
-          ---> Aplicar Elegibilidade
+          Aplicar Elegibilidade
         </Button>
         </div>
       </Card>
