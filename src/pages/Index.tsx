@@ -4,12 +4,11 @@ import Layout from "../components/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import EnvioDados from "../components/tabs/EnvioDados";
 import AnaliseEstatistica from "../components/tabs/AnaliseEstatistica";
-import ResultadosCriterios from "../components/tabs/ResultadosCriterios";
 import Downloads from "../components/tabs/Downloads";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("envio-dados");
-
+  const [responseData, setResponseData] = useState(null);
   return (
     <Layout>
       <div className="space-y-6">
@@ -25,7 +24,7 @@ const Index = () => {
 
         {/* Navegação por Abas */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-4 bg-eucalyptus-pale/30">
+          <TabsList className="grid w-full grid-cols-3 bg-eucalyptus-pale/30">
             <TabsTrigger 
               value="envio-dados"
               className="data-[state=active]:bg-eucalyptus-dark data-[state=active]:text-white"
@@ -36,13 +35,7 @@ const Index = () => {
               value="analise-estatistica"
               className="data-[state=active]:bg-eucalyptus-dark data-[state=active]:text-white"
             >
-              Análise Estatística
-            </TabsTrigger>
-            <TabsTrigger 
-              value="resultados-criterios"
-              className="data-[state=active]:bg-eucalyptus-dark data-[state=active]:text-white"
-            >
-              Resultados de Critérios
+              Resultados
             </TabsTrigger>
             <TabsTrigger 
               value="downloads"
@@ -54,15 +47,16 @@ const Index = () => {
 
           <div className="mt-6">
             <TabsContent value="envio-dados" className="mt-0">
-              <EnvioDados />
+              <EnvioDados
+                onFetchComplete={(data) => {
+                  setResponseData(data);
+                  setActiveTab("analise-estatistica");
+                }}
+              />
             </TabsContent>
             
             <TabsContent value="analise-estatistica" className="mt-0">
-              <AnaliseEstatistica />
-            </TabsContent>
-            
-            <TabsContent value="resultados-criterios" className="mt-0">
-              <ResultadosCriterios />
+              <AnaliseEstatistica response={responseData} />
             </TabsContent>
             
             <TabsContent value="downloads" className="mt-0">

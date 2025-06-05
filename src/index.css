@@ -5,33 +5,6 @@
 
 @layer base {
   :root {
-    --background: 248 249 250;
-    --foreground: 16 24 40;
-
-    --card: 255 255 255;
-    --card-foreground: 16 24 40;
-
-    --popover: 255 255 255;
-    --popover-foreground: 16 24 40;
-
-    --primary: 22 78 99;
-    --primary-foreground: 248 249 250;
-
-    --secondary: 209 234 230;
-    --secondary-foreground: 22 78 99;
-
-    --muted: 244 244 245;
-    --muted-foreground: 82 82 91;
-
-    --accent: 167 225 195;
-    --accent-foreground: 22 78 99;
-
-    --destructive: 220 38 38;
-    --destructive-foreground: 248 249 250;
-
-    --border: 229 231 235;
-    --input: 229 231 235;
-    --ring: 22 78 99;
 
     --radius: 0.5rem;
 
@@ -71,17 +44,6 @@
     --border: 39 39 42;
     --input: 39 39 42;
     --ring: 167 225 195;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
